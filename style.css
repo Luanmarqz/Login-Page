@@ -230,9 +230,10 @@ header nav .btnlogin:active{
 
     .login{
        position: absolute;
-       left: -220%;
+       left: -250%;
         top: -8%;
        max-width: 300px;
+        height: 460px;
 
     }
 
