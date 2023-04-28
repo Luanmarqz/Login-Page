@@ -8,11 +8,13 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body{
-    width: 100%;
-    min-height: 100vh;
+.container{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     background-image: url(images/2122677.png);
-    padding: 10px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -85,6 +87,12 @@ header nav .btnlogin:active{
     transform: scale(0.97);
 }
 
+.btncheck{
+    font-size: 30px;
+    color: #ffff;
+    cursor: pointer;
+}
+
 .login i{
     position: absolute;
     top: 0;
@@ -104,14 +112,10 @@ header nav .btnlogin:active{
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(20px);
     background: rgba(255, 255, 255, 0.1);
-    margin: 15rem 55rem;
     padding: 40px 30px 70px;
     border-radius: 10px;
     color: #ffff;
-    display: flex;
-    flex-direction: column;
     border: 1px solid #ffff;
-    overflow: visible;
     transform: scale(0);
     transition: all 0.3s ease;
 }
@@ -224,16 +228,14 @@ header nav .btnlogin:active{
     text-decoration: underline;
 }
 
-@media(max-width:800px){
+
+@media screen and (max-width:600px){
     header nav a{
         display: none;
     }
-
     .login{
-       position: absolute;
-       margin: 100px auto 0 30px;
-       max-width: 300px;
-       height: 490px;
-       top: 5%;
+        width: 100%;
+        max-width: 320px;
     }
 }
+
