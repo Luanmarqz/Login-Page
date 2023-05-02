@@ -1,602 +1,241 @@
-/*sessao home*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Oswald:wght@300;500;700&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-.navbar{
-    position: fixed;
+.container{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(images/2122677.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2rem 2rem;
     width: 100%;
-    font-family: 'Roboto', sans-serif;
-    padding: 15px 0;
-    box-shadow: 0px 0px 3px black;
-    transition: all 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
     z-index: 999;
 }
 
-.navbar.sticky{
-    background: #2e2787;
-    padding: 15px 0;
+header nav a, button{
+    margin-left: 2rem;
 }
 
-
-.max-width{
-    max-width: 1300px;
-    padding: 0 80px;
-    margin: auto;
+.navbar a{
+   color: aliceblue;
+   transition: all 0.3s ease;
+   position: relative;
 }
 
-.navbar .max-width{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
-
-.navbar .logo a{
-    color: aliceblue;
-    font-size: 35px;
-    font-weight: 500;
-}
-
-.navbar .logo a span{
-    color: #2e2787;
-    transition: all 0.3s ease;
-}
-
-.navbar.sticky .logo a span{
-    color: aliceblue;
-    
-}
-
-.navbar .menu li{
-    list-style: none;
-    display: inline-block;
-}
-
-.navbar .menu li a{
-    color: aliceblue;
-    font-size: 18px;
-    font-weight: 500;
-    margin-left: 25px;
-    transition: color 0.4s ease;
-
-}
-
-.navbar .menu li a:hover{
-    color: #2e2787;
-}
-
-.navbar.sticky .menu li a:hover{
-    color: #0e0a36;
-}
-
-.home{
-    display: flex;
-    background: url(img/Banner2.png) no-repeat center;
-    color: aliceblue;
-    height: 100vh;
-    min-height: 500px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.home .max-width{
-    margin: auto 0 auto 40px;
-}
-
-.home .home-content .text-1{
-    font-size: 27px;
-}
-.home .home-content .text-2{
-    font-size: 75px;
-    font-weight: 500;
-    margin-left: -3px;
-}
-.home .home-content .text-3{
-    font-size: 40px;
-    margin: 5px 0;
-}
-
-.home .home-content .text-3 span{
-    color: #2e2787;
-    font-weight: 500;
-}
-
-.home .home-content a{
-    display: inline-block;
-    background: #2e2787;
-    color: aliceblue;
-    font-size: 25px;
-    padding: 15px;
-    margin-top: 20px;
-    border-radius: 6px;
-    border: 2px solid #2e2787;
-    transition: color 0.5 ease;
-}
-
-.home .home-content a:hover{
-    color: aliceblue;
-    background: none;
-}
-
-.menu-btn{
-    color: #fff;
-    font-size: 26px;
-    cursor: pointer;
-    margin-top: 8px;
-    display: none;
-}
-
-/* sessao similares*/
-
-section{
-    padding: 100px;
-}
-
-section .tittle{
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    font-size: 40px;
-    font-weight: 500;
-    margin-bottom: 60px;
-    padding-bottom: 20px;
-    position: relative;
-}
-
-section .tittle::before{
-    content: "";
+.navbar a::after{
+    content: '';
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 180px;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
     height: 3px;
-    background: black;
-    transform:translateX(-50%) ;
+    background: #ffff;
+    border-radius: 4px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .6s;
 }
 
-section .tittle::after{
-    position: absolute;
-    bottom: -12px;
-    left: 50%;
-   font-size: 20px;
-    background: rgb(255, 255, 255);
-    color: #2e2787;
-    padding: 5px;
-    transform:translateX(-50%) ;
+.navbar a:hover::after{
+    transform: scale(1);
+    transform-origin: left;
 }
 
 
-
-
-/* sessao sobre*/
-
-
-.about, .services, .skills, .projetos, .contact{
-    font-family: 'Roboto', sans-serif;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-}
-
-.about .about-content, .services .serv-content, .skills-content, .projetos-content, .contact .contact-content{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.about .about-content .column-left{
-    width: calc(50%-30px);
-}
-
-.about .tittle{
-    margin-top: -5rem;
-}
-
-.about .about-content{
-    margin-top: 5rem;
-}
-
-.about .about-content .column-right{
-    width: calc(50%-30px);
-}
-
-.about .about-content .column-right .text{
-    font-size: 25px;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
-
-.about .about-content .column-right .text span{
-    color: #2e2787;
-}
-
-.about .about-content .column-right p{
-    text-align: justify;
-}
-
-.about .about-content .column-right a{
-    display: inline-block;
-    background: #2e2787;
-    color: aliceblue;
-    font-size: 25px;
-    padding: 15px;
-    margin-top: 20px;
-    border-radius: 6px;
-    border: 2px solid #2e2787;
-    transition: color 0.5 ease;
-}
-
-.about .about-content .column-right a:hover{
-    color: #2e2787;
-    background: none;
-}
-
-.about .about-content .column-left{
-    display: flex;
-    justify-content: center;
-    margin: 0 auto 60px;
-}
-
-
-.about .tittle::after{
-    content: "Quem sou eu";
-    color: black;
-}
-
-.about .about-content .column-left img{
-    width: 400px;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 6px;
-}
-
-/* sessao serviços*/
-
-.services {
-    background: #101728;
-    color: aliceblue;
-    padding-bottom: 62rem;
-}
-.services .tittle::before{
-    background: aliceblue;
-}
-
-.services .tittle::after{
-    background: #101728;
-    color: aliceblue;
-    content: "O que ofereço";
-}
-
-.services .serv-content .card{
-    width: 300px;
-    height: 170px;
-    background: #2e2787;
-    text-align: center;
-    border-radius: 6px;
-    padding: 20px 25px;
-    cursor: pointer;
-    box-shadow: 0 2px 3px black;
-    transition: all 0.3s ease;
-    margin-top: 15rem;
-    margin-left: 15px;
-}
-
-.services .serv-content .card:hover{
-    background: #0e0a36;
-}
-
-.services .serv-content .card:hover ion-icon{
-    color: aliceblue;
-}
-
-.services .serv-content .card .box{
-    transition: all 0.3s ease;
-}
-
-.services .serv-content .card:hover .box{
-    transform: scale(1.03);
-}
-
-.services .serv-content .card ion-icon{
-    font-size: 50px;
+header nav .btnlogin{
+    margin-left: 2rem;
+    border: 1px solid #ffff;
+    background: transparent;
     color: #ffff;
+    padding: 10px;
+    width: 90px;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+header nav .btnlogin:hover{
+    background: #ffff;
+    border: 1px solid #ffff;
+    color: black;
+}
+
+header nav .btnlogin:active{
+    transform: scale(0.97);
+}
+
+.btncheck{
+    font-size: 30px;
+    color: #ffff;
+    cursor: pointer;
+}
+
+.login i{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2rem;
+    margin-right: 10px;
+    margin-top: 8px;
+
+    cursor: pointer;
+
+}
+
+.login{
+    width: 100%;
+    max-width: 450px;
+    height: 450px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+    color: #ffff;
+    border: 1px solid #ffff;
+    transform: scale(0);
     transition: all 0.3s ease;
 }
 
-.services .serv-content .card .text{
-    font-size: 25px;
-    font-weight: 500;
-    margin: 10px 0 7px 0;
+.active{
+    transform: scale(1);
 }
 
-/* especialidades */
-
-.skills .tittle::after{
-    content: "Que faço";
-    color: black;
-}
-
-.skills .skills-content .column-left, .column-right{
-    width: calc(50% - 30px);
-}
-
-.skills .skills-content .column-left .text{
-    font-size: 25px;
-    font-weight: 500;
-    margin-bottom: 15px;
-}
-
-.skills .skills-content a{
-    background: #2e2787;
-    color: aliceblue;
-    font-size: 10px;
-    padding: 8px;
-    border-radius: 6px;
-    border: 1px solid #2e2787;
-    transition: color 0.5 ease;
-}
-
-.skills .skills-content a:hover{
-    color: #2e2787;
-    background: none;
-}
-
-
-
-.cardskill {
-  width: 500px;
-  background-color: #fff;
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  border-radius: 10px;
-  overflow: hidden;
-  animation-name: floating;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-}
-
-@keyframes floating {
-    0% { transform: translate(0,  0px); }
-    50%  { transform: translate(0, 15px); }
-    100%   { transform: translate(0, -0px); }   
-}
-
-.header {
-  background-color: #2e2787;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  font-size: 18px;
-}
-
-.body {
-  padding: 20px;
-}
-
-.skill {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.skill-name {
-  width: 120px;
-  font-size: 16px;
-}
-
-.skill-level {
-  width: 160px;
-  height: 10px;
-  background-color: #eee;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-left: 20px;
-}
-
-.skill-percent {
-  background-color: #2e2787;
-  height: 100%;
-}
-
-.skill-percent-number {
-  margin-left: 20px;
-  font-size: 16px;
-}
-
-
-.skills .tittle{
-    margin-top: -15rem;
-}
-
-.skills-content{
-    margin-top: 10rem;
-}
-
-.skills p{
-    width: 100rem;
-}
-
-.projetos{
-    background: #101728;
-    color: #fff;
-}
-
-.projetos .tittle::before{
-    background: aliceblue;
-}
-
-.projetos .tittle::after{
-    background: #101728;
-    color: aliceblue;
-    content: "Meus Projetos";
-}
-
-.projetos .carrosel .card{
-    background: #2e2787;
-    border-radius: 6px;
-    padding: 30px 35px;
-    display: inline-block;
-    cursor: pointer;
-    margin-top: 150px;
-}
-
-.projetos .carrosel .card .box:hover{
-    transform: scale(1.05);
-}
-
-.projetos .carrosel .card .box{
-    transition: all 0.4s ease;
-
-}
-
-.projetos .carrosel .card img{
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius:50%;
-    border: 4px solid #0e0a36;
-}
-
-.projetos .carrosel .card .text{
+.login h2{
     text-align: center;
-    font-size: 15px;
-    color: #fff;
+    font-size: 25px;
 }
 
-.projetos .tittle{
-    margin-top: -180px;
+.inputGroup i{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2rem;
+    line-height: 50px;
 }
 
-.contact .contact-content .column-left, .column-right{
-    width: calc(50% -30px);
-}
-
-.contact .contact-content .column-left p{
-    text-align: justify;
-}
-.contact-content .text{
+.inputGroup {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid;
+    margin: 30px 0;
     font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
-
-.contact .icons{
-    margin: 10px 0;
+  }
+  
+  .inputGroup input {
+    width: 95%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
     font-size: 15px;
-    
-}
+    color: #ffff;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+  }
+  
+  .inputGroup label {
+    font-size: 100%;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    font-size: 1.2rem;
+  }
+  
+  .inputGroup :is(input:focus, input:valid)~label {
+    transform: translateY(-160%);
+  }
 
-.contact .contact-content .row{
+  .remember-forgot{
+    font-size: .9rem;
+    font-weight: 500;
+    margin: -15px 0 15px;
     display: flex;
-    height: 65px;
-    align-items: center;
-}
-
-.info{
-    margin-left: 30px;
-}
-
-.row ion-icon{
-    font-size: 25px;
-    color: #2e2787;
-}
-
-.info .head{
-    font-size: 16px;
-}
-
-.info .subtitle{
-    font-size: 12px;
-}
-
-.contact-form {
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 10px;
-    width: 500px;
+    justify-content: space-between;
   }
-  
-  .contact-form label {
-    color: black;
+
+
+  .remember-forgot a{
+    text-decoration: none;
+    color: #ffff;
   }
-  
-  .contact-form .heading {
-    font-size: 24px;
-    color: black;
+
+  .remember-forgot a:hover{
+    text-decoration: underline;
+  }
+
+  .btn-send button{
+    width: 100%;
+    margin-top: 7px;
     text-align: center;
-    margin-bottom: 12px;
-    font-weight: bold;
-    display: block;
-  }
-  
-  .contact-form form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .contact-form label {
-    margin-bottom: 10px;
-  }
-  
-  textarea {
-    resize: none;
-    height: 80px;
-    width: 460px;
-  }
-  
-  .contact-content{
-    margin-top: 10rem;
-  }
-
-  .contact .tittle{
-    margin-top: -15rem;
-  }
-
-  .contact-form input, .contact-form textarea {
-    padding: 10px;
-    border: none;
+    height: 55px;
+    border: 1px solid #ffff;
+    outline: none;
+    margin-left: 0;
     border-radius: 5px;
-    margin-bottom: 20px;
-    font-size: 12px;
-  }
-  
-  
-  .contact-form button[type="submit"] {
-    background-color: #2e2787;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
+    background: #ffff;
+    font-size: 20px;
+    color: black;
+    transition: all 0.4s ease;
     cursor: pointer;
-    transition: all 0.4s ease;
   }
 
-  .contact-form button:active{
-    transform: scale(0.95);
-  }
+  .btn-send button:hover{
+    background: transparent;
+    border: 1px solid #ffff;
+    color: #ffff;
+}
 
-  .contact .column-left .contato-icons ion-icon{
-    font-size: 25px;
-    margin-right: 60px;
-    margin-top: 10px;
-    transition: all 0.4s ease;
-  }
+.btn-send button:active{
+    transform: scale(0.97);
+}
 
-  .contact .column-left .contato-icons a{
-    color: #2e2787;
-    
-  }
+.registrar{
+    margin-top: 2.5rem;
+    text-align: center;
+}
 
-  .contact .column-left .contato-icons ion-icon:hover{
-    transform: scale(1.07);
-  }
-  
-  
+.registrar a{
+    color: #ffff;
+}
+
+.registrar a:hover{
+    text-decoration: underline;
+}
+
+
+@media screen and (max-width:600px){
+    header nav a{
+        display: none;
+    }
+    .login{
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
