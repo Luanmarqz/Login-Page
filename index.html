@@ -1,56 +1,241 @@
-<!DOCTYPE html>
-<html lang="en">
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Oswald:wght@300;500;700&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/c976b72373.js" crossorigin="anonymous"></script>
-</head>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
 
-<body>
-    <div class="container">
-        <div class="menu">
-            <header>
-                <span></span>
-                <nav class="navbar">
-                    <a href="">Home</a>
-                    <a href="">Sobre</a>
-                    <a href="">Serviços</a>
-                    <a href="">Contato</a>
-                    <button class="btnlogin">Login</button>
-                </nav>
-            </header>
-        </div>
+.container{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(images/2122677.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-        <div class="login" id="login">
-            <span class="remove"><i class="fa-sharp fa-solid fa-xmark"></i></span>
-            <h2>Login</h2>
-            <form action="">
-                <div class="inputGroup">
-                    <input type="text" required="" autocomplete="off">
-                    <label for="name">Email</label>
-                    <span><i class="fa-solid fa-envelope"></i></span>
-                </div>
-                <div class="inputGroup">
-                    <input type="password" required="" autocomplete="off">
-                    <label for="name">Senha</label>
-                    <span><i class="fa-solid fa-lock"></i></span>
-                </div>
-                <div class="remember-forgot">
-                    <label for=""><input type="checkbox"> Lembrar de mim?</label>
-                    <a href="">Esqueceu a senha?</a>
-                </div>
-                <div class="btn-send"><button type="submit">Login</button></div>
-                <div class="registrar">
-                    <p>Nao tem uma conta? <a href="">Cadastrar aqui</a></p>
-                </div>
-            </form>
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
+header{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2rem 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    z-index: 999;
+}
 
-</html>
+header nav a, button{
+    margin-left: 2rem;
+}
+
+.navbar a{
+   color: aliceblue;
+   transition: all 0.3s ease;
+   position: relative;
+}
+
+.navbar a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #ffff;
+    border-radius: 4px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .6s;
+}
+
+.navbar a:hover::after{
+    transform: scale(1);
+    transform-origin: left;
+}
+
+
+header nav .btnlogin{
+    margin-left: 2rem;
+    border: 1px solid #ffff;
+    background: transparent;
+    color: #ffff;
+    padding: 10px;
+    width: 90px;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+header nav .btnlogin:hover{
+    background: #ffff;
+    border: 1px solid #ffff;
+    color: black;
+}
+
+header nav .btnlogin:active{
+    transform: scale(0.97);
+}
+
+.btncheck{
+    font-size: 30px;
+    color: #ffff;
+    cursor: pointer;
+}
+
+.login i{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2rem;
+    margin-right: 10px;
+    margin-top: 8px;
+
+    cursor: pointer;
+
+}
+
+.login{
+    width: 100%;
+    max-width: 450px;
+    height: 450px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+    color: #ffff;
+    border: 1px solid #ffff;
+    transform: scale(0);
+    transition: all 0.3s ease;
+}
+
+.active{
+    transform: scale(1);
+}
+
+.login h2{
+    text-align: center;
+    font-size: 25px;
+}
+
+.inputGroup i{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2rem;
+    line-height: 50px;
+}
+
+.inputGroup {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid;
+    margin: 30px 0;
+    font-size: 20px;
+  }
+  
+  .inputGroup input {
+    width: 95%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #ffff;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+  }
+  
+  .inputGroup label {
+    font-size: 100%;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    font-size: 1.2rem;
+  }
+  
+  .inputGroup :is(input:focus, input:valid)~label {
+    transform: translateY(-160%);
+  }
+
+  .remember-forgot{
+    font-size: .9rem;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  .remember-forgot a{
+    text-decoration: none;
+    color: #ffff;
+  }
+
+  .remember-forgot a:hover{
+    text-decoration: underline;
+  }
+
+  .btn-send button{
+    width: 100%;
+    margin-top: 7px;
+    text-align: center;
+    height: 55px;
+    border: 1px solid #ffff;
+    outline: none;
+    margin-left: 0;
+    border-radius: 5px;
+    background: #ffff;
+    font-size: 20px;
+    color: black;
+    transition: all 0.4s ease;
+    cursor: pointer;
+  }
+
+  .btn-send button:hover{
+    background: transparent;
+    border: 1px solid #ffff;
+    color: #ffff;
+}
+
+.btn-send button:active{
+    transform: scale(0.97);
+}
+
+.registrar{
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+.registrar a{
+    color: #ffff;
+}
+
+.registrar a:hover{
+    text-decoration: underline;
+}
+
+
+@media screen and (max-width:600px){
+    header nav a{
+        display: none;
+    }
+    .login{
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
